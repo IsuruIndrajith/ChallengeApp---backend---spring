@@ -10,6 +10,12 @@ import java.util.List;
 public class ChallengeController {
     private List<Challenge> challenges = new ArrayList<>();
 
+    public ChallengeController(){
+        Challenge challenge01 = new Challenge(1, "January", "Learn a new programming Language");
+        challenges.add(challenge01);
+    }
+
+
 
     @GetMapping("/challenges")
     public  List<Challenge> getAllChallenges(){

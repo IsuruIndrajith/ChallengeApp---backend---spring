@@ -1,19 +1,19 @@
 package com.rest.ChallengeApp;
 
 public class Challenge{
-    private Long id;
+    private Integer id;
     private String month;
     private String description;
 
 //    Contructor
-    public Challenge(Long id, String month, String description) {
+    public Challenge(Integer id, String month, String description) {
         this.id = id;
         this.month = month;
         this.description = description;
     }
 
 //    Getter
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -27,7 +27,7 @@ public class Challenge{
 
 //    Setter
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
