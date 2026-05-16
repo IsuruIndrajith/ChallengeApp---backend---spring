@@ -1,9 +1,6 @@
 package com.rest.ChallengeApp;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,15 +18,26 @@ public class ChallengeController {
         return challengeService.ReturnChallenges();
     }
 
+//    By default the methods are get methods
+    @GetMapping("/challenges/{id}")
+    public Challenge getChallengeById(@PathVariable int id){
+        return challengeService.getChallengeById(id);
+    }
 
     @PostMapping("/challenges")
-    public String addChallenge(@RequestBody Challenge challenge){
-        boolean is_challenge_added =  challengeService.addChallenge(challenge);
-        if (is_challenge_added)
-            return "Challenge Added successfully";
-        else;
-            return "Challenge not added succesfully";
+    public void addNewChallenge(@RequestBody Challenge challenge){
+        challengeService.addNewChallenge(challenge);
     }
+
+
+//    @PostMapping("/challenges")
+//    public String addChallenge(@RequestBody Challenge challenge){
+//        boolean is_challenge_added =  challengeService.addChallenge(challenge);
+//        if (is_challenge_added)
+//            return "Challenge Added successfully";
+//        else;
+//            return "Challenge not added succesfully";
+//    }
 
 }
 

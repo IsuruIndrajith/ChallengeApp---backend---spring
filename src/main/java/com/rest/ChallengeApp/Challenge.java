@@ -38,4 +38,13 @@ public class Challenge{
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Challenge{" +
+                "id=" + id +
+                ", month='" + month + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

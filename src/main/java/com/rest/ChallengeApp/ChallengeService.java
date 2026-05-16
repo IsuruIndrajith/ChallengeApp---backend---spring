@@ -11,12 +11,23 @@ public class ChallengeService {
     private List<Challenge> challenges = new ArrayList<>();
 
     public ChallengeService(){
+//        Added a dummy Challenge
         Challenge challenge01 = new Challenge(1, "January", "Learn a new programming Language");
         challenges.add(challenge01);
     }
 
     public List<Challenge> ReturnChallenges() {
         return challenges;
+    }
+
+    public Challenge getChallengeById(int id){
+        return challenges.stream()
+                .filter(p -> p.getId() == id)
+                .findFirst().orElse(new Challenge(100, "Not Found", "No challenge found for this ID"));
+    }
+
+    public void addNewChallenge(Challenge challenge){
+        challenges.add(challenge);
     }
 
     public boolean addChallenge(Challenge challenge){
