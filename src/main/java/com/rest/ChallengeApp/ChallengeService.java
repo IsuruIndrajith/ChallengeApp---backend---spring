@@ -42,4 +42,23 @@ public class ChallengeService {
     public List<Challenge> getAllChallenges() {
         return null;
     }
+
+    public void updateChallenge(Challenge challenge) {
+        int index=0;
+        for (int i=0; i<challenges.size();i++)
+            if(challenges.get(i).getId() == challenge.getId())
+                index = i;
+
+        challenges.set(index,challenge);
+    }
+
+    public void deleteChallenge(int id) {
+        int index=0;
+        for (int i=0; i<challenges.size();i++)
+            if(challenges.get(i).getId() == id)
+                index = i;
+
+        challenges.remove(id);
+
+    }
 }

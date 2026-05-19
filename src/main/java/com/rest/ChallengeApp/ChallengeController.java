@@ -38,6 +38,15 @@ public class ChallengeController {
 //        else;
 //            return "Challenge not added succesfully";
 //    }
+    @PutMapping("/challenges")
+    public void updateChallenge(@RequestBody Challenge challenge){
+        System.out.println("In here in Update");
+        challengeService.updateChallenge(challenge);
+    }
 
+    @DeleteMapping("/challenges/{id}")
+    public void deleteChallenge(@PathVariable int id){
+        challengeService.deleteChallenge(id);
+    }
 }
 
